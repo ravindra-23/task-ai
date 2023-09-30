@@ -2,7 +2,7 @@ import Button from './Button'
 
 const NewsLetter = () => {
   return (
-    <div className="w-full p-4 my-24 flex flex-col gap-4 items-center rounded-lg backdrop-blur-xl">
+    <div className="w-full p-4 mt-24 mb-10 flex flex-col gap-4 items-center rounded-lg backdrop-blur-xl">
         <h1 className="text-xlarge font-poppins font-bold leading-[50px] text-center">
             Try it for <span className="text-brand">Free!</span>
         </h1>
