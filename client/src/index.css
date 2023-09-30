@@ -1,10 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;600;700;800;900&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-    padding: 0;
-    margin: 0;
-    background-color: #111;
-    color: white;
+@layer base {
+    :root {
+        --background: #080e11;
+        --text: #fff;
+
+        --text2: #82a869;
+        --tertiary: #757575;
+        --hovery: #27272733;
+
+        --brand: #3153e3;
+        --blue: #7dd3fc;
+        --orange: #e78c24;
+        --red: #e24343;
+
+        --custom_01: #c6b594;
+        --custom_03: #e1d1d1;
+
+        --radius: 0.5rem;
+        --xlarge: 40px;
+        --large: 24px;
+        --medium: 20px;
+        --normal: 16px;
+        --tiny: 14px;
+
+        @media screen and (width < 500px) {
+            --xlarge: 36px;
+        }
+
+        @media screen and (width < 380px) {
+            --xlarge: 30px;
+            --large: 22px;
+        }
+    }
+}
+
+@layer base {
+    body {
+        @apply bg-background text-text font-jakarta font-medium custom-scrollbar;
+    }
+}
+
+.active {
+    opacity: 1;
+}
+
+.transition-effect {
+    transition:
+        opacity 0.1s ease-in-out,
+        top 0.1s ease-in-out;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+    background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    width: 3px;
+    height: 3px;
+    border-radius: var(--radius);
+    background: transparent;
+}
+
+.custom-scrollbar:hover::-webkit-scrollbar-thumb {
+    background: var(--tertiary);
 }
