@@ -17,14 +17,16 @@ export default {
     colors: {
 			background: "var(--background)",
 			text: "var(--text)",
-      text2: "var(--text2)",
+			text2: "var(--text2)",
 			tertiary: "var(--tertiary)",
 			hovery: "var(--hovery)",
-
 			brand: "var(--brand)",
 			blue: "var(--blue)",
 			orange: "var(--orange)",
 			red: "var(--red)",
+			custom_01: "var(--custom_01)",
+			custom_02: "var(--custom_02)",
+			custom_03: "var(--custom_03)",
 		},
     fontSize: {
 			xlarge: "var(--xlarge)",
