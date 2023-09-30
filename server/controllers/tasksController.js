@@ -3,11 +3,12 @@ import { Task } from '../mongodb/models/task.js';
 export const createTask = async (request, response) => {
 	try {
 		const {
-			body: { title, description, category, priority, tags, notes }
+			body: { title, id, description, category, priority, tags, notes }
 		} = request;
 
 		if (
 			!title ||
+			!id ||
 			!description ||
 			!category ||
 			!priority ||
@@ -19,6 +20,7 @@ export const createTask = async (request, response) => {
 
 		const newTask = {
 			title,
+			id,
 			description,
 			category,
 			priority,
