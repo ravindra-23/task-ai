@@ -5,7 +5,7 @@ const Logo = () => {
   return (
     <Link 
         to='/'
-        className='text-brand uppercase font-jakarta font-medium text-medium flex items-center gap-2 hover:text-custom_02 transition-all duration-300'
+        className='text-brand uppercase font-jakarta font-bold text-medium flex items-center gap-2 hover:text-custom_02 transition-all duration-300'
     >
         <img 
             src={LogoIcon}
