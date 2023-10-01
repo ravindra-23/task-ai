@@ -16,7 +16,7 @@ const EditTaskCard = ({ _id, setViewEditModel, setRefetching }) => {
   const fetchTask = async() => {
     try {
         setLoading(true);
-        const data = await axios.get(`http://localhost:5000/tasks/${_id}`);
+        const data = await axios.get(`https://task-ai.onrender.com/tasks/${_id}`);
         setTask(data.data);
         setNotes(data.data.notes);
         setPriority(data.data.priority);
@@ -30,7 +30,7 @@ const EditTaskCard = ({ _id, setViewEditModel, setRefetching }) => {
   const handleTaskDone = async () => {
     try {
         setIsDone(true);
-        await axios.delete(`http://localhost:5000/tasks/${_id}`);
+        await axios.delete(`https://task-ai.onrender.com/tasks/${_id}`);
         setIsDone(false);
         setViewEditModel(false);
         setRefetching((ref) => !ref);
@@ -44,7 +44,7 @@ const EditTaskCard = ({ _id, setViewEditModel, setRefetching }) => {
     try {
         setIsUpdating(true);
         await axios.put(
-            `http://localhost:5000/tasks/${_id}`,
+            `https://task-ai.onrender.com/tasks/${_id}`,
             { ...task, notes, priority },
         );
         setIsUpdating(false);

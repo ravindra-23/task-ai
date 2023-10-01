@@ -12,7 +12,7 @@ const CreateTask = ({ styles, setCreatedTask, setCreated }) => {
     try {
         setLoading(true);
         const data = await axios.post(
-            "http://localhost:5000/gpt",
+            "https://task-ai.onrender.com/gpt",
             { title: prompt },
         );
         const task = await JSON.parse(data.data.task);

@@ -14,7 +14,7 @@ const CreatedTaskCard = ({ task, setCreated, setRefetching }) => {
     try {
       setIsSaving(true);
 			await axios.post(
-				"http://localhost:5000/tasks",
+				"https://task-ai.onrender.com/tasks",
 				{ ...task, notes, priority },
 			);
       setIsSaving(false);

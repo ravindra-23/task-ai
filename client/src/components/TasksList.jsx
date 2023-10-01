@@ -21,7 +21,7 @@ const TasksList = ({ reFetching, setRefetching }) => {
   const fetchTasks = () => {
     setLoading(true);
     axios
-        .get("http://localhost:5000/tasks")
+        .get("https://task-ai.onrender.com/tasks")
         .then((res) => {
             setTasks(res.data.data);
             setLoading(false);

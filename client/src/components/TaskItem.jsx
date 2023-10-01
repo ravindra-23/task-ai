@@ -15,7 +15,7 @@ const TaskItem = ({ task, setRefetching, setViewEditModel, setTaskId }) => {
     try {
         setIsDeleting(true);
         await axios.delete(
-            `http://localhost:5000/tasks/${task._id}`,
+            `https://task-ai.onrender.com/${task._id}`,
         );
         setIsDeleting(false);
         setRefetching((ref) => !ref);
