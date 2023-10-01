@@ -6,7 +6,6 @@ const Tasks = () => {
   const [createdTask, setCreatedTask] = useState(null);
   const [created, setCreated] = useState(false);
   const [reFetching, setRefetching] = useState(false);
-  console.log('Created Task:', createdTask)
 
   useEffect(() => {
 		if (created) {
