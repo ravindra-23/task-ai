@@ -11,7 +11,19 @@ const TaskItem = ({ task, setRefetching, setViewEditModel, setTaskId }) => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [viewMenu, setViewMenu] = useState(false);
 
-  const handleDeleteTask = () => {}
+  const handleDeleteTask = async () => {
+    try {
+        setIsDeleting(true);
+        await axios.delete(
+            `http://localhost:5000/tasks/${task._id}`,
+        );
+        setIsDeleting(false);
+        setRefetching((ref) => !ref);
+    } catch (err) {
+        setIsDeleting(false);
+        console.log(err);
+    }
+  }
   return (
     <div className={`rounded-lg backdrop-blur-xl border border-brand p-4 relative flex flex-col ${isDeleting && "opacity-50"}`}
         onPointerLeave={() => setViewMenu(false)}
@@ -46,8 +58,8 @@ const TaskItem = ({ task, setRefetching, setViewEditModel, setTaskId }) => {
                     <button
                         className="opacity-80 hover:opacity-100 hover:bg-hovery transition-all py-[6px] rounded-sm flex gap-2 items-center justify-center hover:text-brand"
                         onClick={() => {
-                            // setViewEditModel(true);
-                            // setTaskId(task._id);
+                            setViewEditModel(true);
+                            setTaskId(task._id);
                         }}
                     >
                         <FiEdit size={18} className="text-brand" />
@@ -69,7 +81,7 @@ const TaskItem = ({ task, setRefetching, setViewEditModel, setTaskId }) => {
             /{new Date(task.updatedAt).getFullYear()}
         </p>
 
-        <h1 className="text-large font-[400] pb-1 border-b border-custom_01 capitalize">
+        <h1 className="text-large font-[400] font-poppins pb-1 border-b border-custom_01 capitalize">
             {task.title}
         </h1>
 
