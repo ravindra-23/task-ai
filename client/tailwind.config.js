@@ -24,6 +24,7 @@ export default {
 			blue: "var(--blue)",
 			orange: "var(--orange)",
 			red: "var(--red)",
+			green:"var(--green)",
 			custom_01: "var(--custom_01)",
 			custom_02: "var(--custom_02)",
 			custom_03: "var(--custom_03)",
