@@ -4,6 +4,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import connectDB from "./mongodb/connect.js";
 import tasksRoutes from './routes/tasksRoutes.js';
+import openaiRoutes from './routes/openaiRoutes.js';
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ app.get('/', async (req, res) => {
 })
 
 app.use("/tasks", tasksRoutes);
+app.use("/gpt", openaiRoutes);
 
 const startServer = async () => {
 	const port = process.env.PORT || 5000;
