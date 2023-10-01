@@ -82,3 +82,35 @@ export const getTask = async (request, response) => {
 			.send({ message: err.message || "Something went wrong" });
 	}
 };
+
+export const editTask = async (request, response) => {
+	try {
+		const {
+			body: { title, description, category, priority, tags, notes },
+			params: { id },
+		} = request;
+
+		if (
+			!title ||
+			!description ||
+			!category ||
+			!priority ||
+			!tags ||
+			!notes
+		) {
+			return response.status(400).send({ message: "Missing required data" });
+		}
+
+		const updatedTask = await Task.findByIdAndUpdate(id, request.body);
+		if (!updatedTask) {
+			return response.status(404).json({ message: "Task to update not found" });
+		}
+
+		return response.status(200).send({ message: "Task updated successfully" });
+	} catch (err) {
+		console.log(err.message);
+		return response
+			.status(500)
+			.send({ message: err.message || "Something went wrong" });
+	}
+};
