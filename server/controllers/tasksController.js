@@ -36,3 +36,18 @@ export const createTask = async (request, response) => {
 			.send({ message: err.message || "Something went wrong" });
 	}
 };
+
+export const getTasks = async (request, response) => {
+	try {
+		const tasks = await Task.find({});
+		return response.status(200).json({
+			count: tasks.length,
+			data: tasks,
+		});
+	} catch (err) {
+		console.log(err.message);
+		return response
+			.status(500)
+			.send({ message: err.message || "Something went wrong" });
+	}
+};
