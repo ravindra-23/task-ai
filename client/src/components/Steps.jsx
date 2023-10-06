@@ -11,7 +11,7 @@ const steps = [
 	{
 		title: "Step 2",
 		description:
-			"Watch TaskWise.ai whip up an incredibly intelligent solution.",
+			"Watch Task AI whip up an incredibly intelligent solution.",
 		icon: <IoTimerOutline size={26} />,
 	},
 	{
