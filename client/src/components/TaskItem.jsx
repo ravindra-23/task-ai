@@ -10,11 +10,12 @@ import Loader from "./Loader";
 const TaskItem = ({ task, setRefetching, setViewEditModel, setTaskId }) => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [viewMenu, setViewMenu] = useState(false);
+  const { _id } = task;
 
   const handleDeleteTask = async () => {
     try {
       setIsDeleting(true);
-      await axios.delete(`https://task-ai.onrender.com/tasks/${task._id}`);
+      await axios.delete(`https://task-ai.onrender.com/tasks/${_id}`);
       setIsDeleting(false);
       setRefetching((ref) => !ref);
     } catch (err) {
